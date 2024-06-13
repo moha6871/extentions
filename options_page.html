@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BigBobux Settings</title>
+    <link href="bootstrap@5.3.0.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bootstrap-icons@1.10.5/bootstrap-icons.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container my-4">
+      <form id="settings">
+        <div class="mb-4 row g-0">
+          <label for="displayInput" class="form-label">Display</label>
+          <input
+            type="text"
+            class="form-control col"
+            id="displayInput"
+            data-dataname="display"
+            aria-describedby="displayHelp"
+          />
+          <button
+            id="resetDisplay"
+            data-input="#displayInput"
+            class="btn btn-outline-danger col-auto mx-1"
+          >
+            <i class="bi bi-arrow-counterclockwise me-2"></i><span>Reset</span>
+          </button>
+          <div id="displayHelp" class="form-text">
+            The text to replace your current Robux display with
+          </div>
+        </div>
+
+        <div class="form-switch form-control-lg">
+          <div class="row align-items-center">
+            <div class="col-auto">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="enableBalanceInput"
+                data-dataname="enableBalance"
+                role="switch"
+              />
+            </div>
+            <div class="col">
+              <label class="form-check-label form-text m-0" for="enableBalanceInput">
+                Overwrite Balance
+              </label>
+            </div>
+          </div>
+          <div class="form-text form-control-sm m-0 ms-3">
+            Clicking the Robux on the Roblox website will reveal your exact Robux balance, by
+            default the plugin does not overwrite that
+          </div>
+        </div>
+
+        <div class="mb-3 row g-0" id="balanceField">
+          <label for="balanceInput" class="form-label">Balance Display</label>
+          <input
+            type="text"
+            class="form-control col"
+            id="balanceInput"
+            data-dataname="balance"
+            aria-describedby="balanceHelp"
+          />
+          <button
+            id="resetBalance"
+            data-input="#balanceInput"
+            class="btn btn-outline-danger col-auto mx-1"
+          >
+            <i class="bi bi-arrow-counterclockwise me-2"></i><span>Reset</span>
+          </button>
+          <div id="balanceHelp" class="form-text">
+            The text to replace your current balance display with
+          </div>
+        </div>
+        <button type="submit" id="saveButton" class="btn btn-success">Save</button>
+        <button type="reset" id="resetButton" class="btn btn-danger ms-2">Reset All</button>
+      </form>
+    </div>
+
+    <footer class="p-3 bg-body-tertiary text-center fixed-bottom position-relative">
+      <p class="mb-0 small">Copyright &copy; 2023 Leon - All rights reserved</p>
+    </footer>
+
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-2">
+      <div
+        class="toast align-items-center text-bg-success"
+        id="savedToast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="1500"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Saved!</div>
+          <button
+            type="button"
+            class="btn-close me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-2">
+      <div
+        class="toast align-items-center text-bg-danger"
+        id="resetToast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="750"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Reset!</div>
+          <button
+            type="button"
+            class="btn-close me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-2">
+      <div
+        class="toast align-items-center text-bg-warning"
+        id="unsavedToast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-autohide="false"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Careful - you have unsaved changes!</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="options.js" type="module"></script>
+  </body>
+  <script src="bootstrap@5.3.0.bundle.min.js"></script>
+</html>
